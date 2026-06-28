@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>WebShield - Website Vulnerability Scanner</title>
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+
+<div class="container">
+
+    <h1>🛡️ WebShield</h1>
+    <h2>Website Vulnerability Scanner</h2>
+
+    <form action="/scan" method="POST">
+
+        <label>Enter Website URL:</label><br><br>
+
+        <input type="text"
+               name="url"
+               placeholder="example.com"
+               required>
+
+        <br><br>
+
+        <button type="submit">Scan Website</button>
+
+    </form>
+
+</div>
+
+</body>
+</html>

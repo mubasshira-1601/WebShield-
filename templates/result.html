@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Scan Results</title>
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+
+<div class="container">
+
+    <h1>Scan Results</h1>
+
+    {% if error %}
+        <h2 style="color:red;">{{ error }}</h2>
+
+    {% else %}
+
+        <h3>Website: {{ url }}</h3>
+
+        <h2>Security Score: {{ score }}/100</h2>
+
+        <h2 style="color: {{ color }};">
+            Risk Level: {{ risk }}
+        </h2>
+
+        <table>
+            <tr>
+                <th>Security Check</th>
+                <th>Status</th>
+            </tr>
+
+            {% for key, value in results.items() %}
+            <tr>
+                <td>{{ key }}</td>
+                <td>{{ value }}</td>
+            </tr>
+            {% endfor %}
+
+        </table>
+
+    {% endif %}
+
+    <br>
+
+    <a href="/">Scan Another Website</a>
+
+</div>
+
+</body>
+</html>
